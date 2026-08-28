@@ -14,13 +14,13 @@
         
         function openNav() {
             document.getElementById("mySidenav").style.width = "250px";
-            document.getElementById("main").style.marginLeft = "250px";
+            document.getElementById("main").style.marginRight = "250px";
             document.getElementById("menu").style.display = "none";
         }
 
         function closeNav() {
             document.getElementById("mySidenav").style.width = "0";
-            document.getElementById("main").style.marginLeft= "0";
+            document.getElementById("main").style.marginRight= "0";
             document.getElementById("menu").style.display = "block";
         }
     </script>
@@ -29,11 +29,10 @@
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
-        <h2 class="cactus-classical-serif-regular">Menu</h2>
-        <a href="#introduction" class="cactus-classical-serif-regular">Introduction</a>
-        <a href="#next-part" class="cactus-classical-serif-regular">next part</a>
-        <a href="#another-part" class="cactus-classical-serif-regular">another part</a>
-        <a href="#conclusion" class="cactus-classical-serif-regular">Conclusion</a>
+        <a href="#introduction" class="cactus-classical-serif-regular">1. Introduction</a>
+        <a href="#next-part" class="cactus-classical-serif-regular">2. Next Part</a>
+        <a href="#another-part" class="cactus-classical-serif-regular">3. Another Part</a>
+        <a href="#conclusion" class="cactus-classical-serif-regular">4. Conclusion</a>
     </div>
 
 <!-- Use any element to open the sidenav -->
@@ -42,14 +41,42 @@
 <div id="main">
     <!-- top bar -->
     <div class="topnav">
-        <h1 onclick="openNav()" id="menu" class="cactus-classical-serif-regular">Menu</h1>
+        <a onclick="openNav()" id="menu">&#9776;</a>
         <a href="#" class="cactus-classical-serif-regular">Contact</a>
         <a href="#" class="cactus-classical-serif-regular">About</a>
         <a href="#" class="cactus-classical-serif-regular">Home</a>
     </div>
 
     <div class="main-content">
-        <h1 class="Title" id="introduction">Lore Ipsum dolor sit amet dus whatever</h1> 
+        <h1 class="title" id="Title">Lore Ipsum dolor sit amet dus whatever</h1> 
+        <h2 class="h2" id="introduction">Introduction</h2>
+        <p class="paragraph">Lorem ipsum dolor sit amet, consectetur adipiscing elit. 
+            Donec id enim nec tortor scelerisque dignissim. Integer consequat ligula convallis tempus fermentum. 
+            Nunc molestie libero nisl, at iaculis ligula venenatis eget. Mauris pulvinar luctus accumsan. 
+            In tempor est dui, a molestie massa porttitor sed. Vestibulum eget quam leo. 
+            Ut a tortor condimentum, vestibulum massa ut, fermentum neque. Phasellus porttitor ornare bibendum. 
+            Etiam id varius nisl. Cras tempus ligula ultricies, tempus enim eu, vestibulum leo. 
+            In euismod augue ipsum, pretium aliquet odio dapibus quis.
+        </p>
+        <h2 class="h2" id="next-part">2. Next Part</h2>
+        <p class="paragraph"> Duis ut sodales tortor. Nulla semper id tellus vel interdum.
+            Praesent semper suscipit nisi, vitae semper velit sollicitudin quis. 
+            Sed eget metus iaculis, rhoncus mauris ac, auctor ipsum. Etiam quis elit orci. 
+            Donec id metus eu tortor cursus consequat. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+            per inceptos himenaeos. Phasellus pretium finibus massa nec faucibus. Ut ac risus orci.
+            In malesuada diam et auctor finibus. Quisque placerat, est ut aliquam congue, metus dolor auctor arcu,
+            id iaculis mauris metus vitae mi.
+        </p>
+        <p class="paragraph">Pellentesque augue arcu, aliquet ac ullamcorper vehicula, hendrerit nec mauris.
+            Mauris quis commodo nulla. Vivamus lorem velit, hendrerit sit amet pretium nec, dictum in risus.
+            Aliquam at tortor eget eros fringilla convallis ac ut magna.
+            Sed tortor orci, varius at elit sed, laoreet aliquet enim. 
+            Etiam vel tellus nec velit porttitor pellentesque. Aenean a enim auctor, efficitur massa eget, venenatis tortor.   
+            Duis consequat vestibulum mollis. Quisque lacinia nulla eu nibh dictum sodales. 
+            Nam ultricies volutpat elit, at ultricies enim dapibus in. In et hendrerit risus. 
+            Ut in consequat augue. Nam non orci diam. Vivamus vitae justo pellentesque ante auctor rutrum id a sem. 
+            Nulla convallis erat id ex finibus posuere. Aenean porta odio non gravida fringilla.
+        </p>
     </div>
 </div>
 
