@@ -1,12 +1,15 @@
+
 img {
-  width: 600px;
+  width: 100%;
   cursor: pointer;
+  display: block;
+  margin-inline: auto;
 }
 
 .image-modal {
   position: fixed;
   inset: 0;
-  background: rgba(0, 0, 0, 0.9);
+  background: rgba(0, 0, 0, 0.75);
   display: none;
   align-items: center;
   justify-content: center;
@@ -36,10 +39,11 @@ img {
   font-size: 42px;
   width: 44px;
   height: 44px;
-  border-radius: 50%;
+  border-radius: 0;
   cursor: pointer;
   line-height: 1;
   padding: 0;
+  outline: none;
 }
 
 .cactus-classical-serif-regular {
@@ -70,6 +74,7 @@ img {
   font-weight: 200;
   font-style: normal;
   font-size: 24px;
+  display: inline-block;
 }
 
 .title {
@@ -101,6 +106,12 @@ img {
   right: 0;
   padding: 30px 30px;
   display: none;
+  outline: none;
+  border: none;
+  background: transparent;
+  cursor: pointer;
+  color: #f2f2f2;
+  font-size: 24px;
 }
 
 /* Style the links inside the navigation bar */
@@ -110,6 +121,12 @@ img {
   text-align: center;
   padding: 30px 30px;
   text-decoration: none;
+  outline: none;
+  border: none;
+}
+
+.topnav a:focus {
+  outline: none;
   font-size: 17px;
 }
 
@@ -157,12 +174,14 @@ img {
   right: 0; /* Stay at the right side */
   background-color: #8f8f8f; /* Black*/
   overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /* Place content 60px from the top */
-  transition: 0.5s; /* 0.5 second transition effect to slide in the sidenav */
-}
-
-/* The navigation menu links */
-.sidenav a {
+  padding-top: 60px; /*80px;
+  text-decoration: none;
+  font-size: 26px;
+  color: #f8f8f8;
+  display: block;
+  transition: 0.3s;
+  outline: none;
+  border: none
   padding: 8px 8px 8px 32px;
   text-decoration: none;
   font-size: 26px;
@@ -194,6 +213,53 @@ img {
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
-  .sidenav {padding-top: 15px;}
+ 
+
+/* Mobile responsive layout */
+@media screen and (max-width: 768px) {
+  .topnav {
+    height: 60px;
+  }
+
+  .topnav a {
+    padding: 20px 15px;
+    font-size: 14px;
+  }
+
+  .topnav .menu_btn {
+    display: block !important;
+    padding: 15px 15px;
+  }
+
+  #main {
+    padding: 15px;
+    margin-right: 0;
+  }
+
+  .sidenav {
+    width: 0;
+  }
+
+  .sidenav a {
+    padding: 8px 8px 8px 32px;
+    font-size: 18px;
+  }
+
+  .paragraph {
+    font-size: 16px;
+  }
+
+  .title {
+    font-size: 32px;
+  }
+
+  .h2 {
+    font-size: 24px;
+  }
+
+  img {
+    width: 100%;
+  }
+} .sidenav {padding-top: 15px;}
   .sidenav a {font-size: 18px;}
 }

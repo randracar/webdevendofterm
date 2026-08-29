@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-GB">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The story of the Internet since 2006</title>
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=M+PLUS+Rounded+1c&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
+
+    <script>
+        
+        function openNav() {
+            document.getElementById("mySidenav").style.width = "250px";
+            document.getElementById("main").style.marginRight = "250px";
+            document.getElementById("menu").style.display = "none";
+        }
+
+        function closeNav() {
+            document.getElementById("mySidenav").style.width = "0";
+            document.getElementById("main").style.marginRight= "0";
+            document.getElementById("menu").style.display = "block";
+        }
+
+        function openImageModal(image) {
+            const modal = document.getElementById("imageModal");
+            const modalImage = document.getElementById("modalImage");
+            modalImage.src = image.src;
+            modalImage.alt = image.alt;
+            modal.classList.add("open");
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById("imageModal");
+            modal.classList.remove("open");
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const modal = document.getElementById("imageModal");
+            const closeButton = document.getElementById("closeModal");
+            const images = document.querySelectorAll("img");
+
+            images.forEach((image) => {
+                image.addEventListener("click", function() {
+                    openImageModal(image);
+                });
+            });
+
+            closeButton.addEventListener("click", closeImageModal);
+        });
+    </script>
+</head>
+<body>
+
+    <div id="imageModal" class="image-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <button id="closeModal" class="modal-close" aria-label="Close image">&times;</button>
+        <img id="modalImage" src="" alt="Expanded view">
+    </div>
+
+    <div id="mySidenav" class="sidenav">
+        <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
+        <a href="#introduction" class="cactus-classical-serif-regular">1. Introduction</a>
+        <a href="#next-part" class="cactus-classical-serif-regular">2. Next Part</a>
+        <a href="#another-part" class="cactus-classical-serif-regular">3. Another Part</a>
+        <a href="#conclusion" class="cactus-classical-serif-regular">4. Conclusion</a>
+    </div>
+
+<!-- Use any element to open the sidenav -->
+
+<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
+<div id="main">
+    <!-- top bar -->
+    <div class="topnav">
+        <a onclick="openNav()" id="menu" class="menu_btn">&#9776;</a>
+        <a class="roboto-regular" href="index.html">Home</a>
+        <a class="roboto-regular" href="about.html">About</a>
+        <a class="roboto-regular" href="contact.html">Contact</a>
+    </div>
+
+    <div class="main-content">
+        About
+    </div>
+</div>
+
+    
+</body>
