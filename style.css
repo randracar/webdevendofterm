@@ -1,26 +1,87 @@
+img {
+  width: 600px;
+  cursor: pointer;
+}
+
+.image-modal {
+  position: fixed;
+  inset: 0;
+  background: rgba(0, 0, 0, 0.9);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.image-modal.open {
+  display: flex;
+}
+
+#modalImage {
+  max-width: 90vw;
+  max-height: 90vh;
+  width: auto;
+  height: auto;
+  border-radius: 0;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.75);
+}
+
+.modal-close {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  border: none;
+  background: transparent;
+  color: #ffffff;
+  font-size: 42px;
+  width: 44px;
+  height: 44px;
+  border-radius: 50%;
+  cursor: pointer;
+  line-height: 1;
+  padding: 0;
+}
+
 .cactus-classical-serif-regular {
   font-family: "Cactus Classical Serif", serif;
   font-weight: 400;
   font-style: normal;
 }
 
-.paragraph {
-  font-family: "Cactus Classical Serif", serif;
+.m-plus-rounded-1c-regular {
+  font-family: "M PLUS Rounded 1c", sans-serif;
   font-weight: 400;
+  font-style: normal;
+}
+
+
+.roboto-regular {
+  font-family: "Roboto", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-variation-settings:
+    "wdth" 100;
+}
+
+
+.paragraph {
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: 200;
   font-style: normal;
   font-size: 24px;
 }
 
 .title {
-  font-family: "Cactus Classical Serif", serif;
+  font-family: Verdana, Geneva, sans-serif;
   font-weight: 400;
   font-style: normal;
   font-size: 48px;
 }
 
 .h2 {
-  font-family: "Cactus Classical Serif", serif;
-  font-weight: 400;
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: 300;
   font-style: normal;
   font-size: 36px;
 }
@@ -34,9 +95,17 @@
   position: relative;
 }
 
+.topnav .menu_btn {
+  position: absolute;
+  top: 0;
+  right: 0;
+  padding: 30px 30px;
+  display: none;
+}
+
 /* Style the links inside the navigation bar */
 .topnav a {
-  float: right;
+  float: left;
   color: #f2f2f2;
   text-align: center;
   padding: 30px 30px;

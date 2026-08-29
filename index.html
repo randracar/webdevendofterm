@@ -8,7 +8,8 @@
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=M+PLUS+Rounded+1c&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+
 
     <script>
         
@@ -23,9 +24,46 @@
             document.getElementById("main").style.marginRight= "0";
             document.getElementById("menu").style.display = "block";
         }
+
+        function openImageModal(image) {
+            const modal = document.getElementById("imageModal");
+            const modalImage = document.getElementById("modalImage");
+            modalImage.src = image.src;
+            modalImage.alt = image.alt;
+            modal.classList.add("open");
+        }
+
+        function closeImageModal() {
+            const modal = document.getElementById("imageModal");
+            modal.classList.remove("open");
+        }
+
+        document.addEventListener("DOMContentLoaded", function() {
+            const modal = document.getElementById("imageModal");
+            const closeButton = document.getElementById("closeModal");
+            const images = document.querySelectorAll("img");
+
+            images.forEach((image) => {
+                image.addEventListener("click", function() {
+                    openImageModal(image);
+                });
+            });
+
+            closeButton.addEventListener("click", closeImageModal);
+            modal.addEventListener("click", function(event) {
+                if (event.target === modal) {
+                    closeImageModal();
+                }
+            });
+        });
     </script>
 </head>
 <body>
+
+    <div id="imageModal" class="image-modal" aria-hidden="true" role="dialog" aria-modal="true">
+        <button id="closeModal" class="modal-close" aria-label="Close image">&times;</button>
+        <img id="modalImage" src="" alt="Expanded view">
+    </div>
 
     <div id="mySidenav" class="sidenav">
         <a href="javascript:void(0)" class="closebtn" onclick="closeNav()">&times;</a>
@@ -41,10 +79,10 @@
 <div id="main">
     <!-- top bar -->
     <div class="topnav">
-        <a onclick="openNav()" id="menu">&#9776;</a>
-        <a href="#" class="cactus-classical-serif-regular">Contact</a>
-        <a href="#" class="cactus-classical-serif-regular">About</a>
-        <a href="#" class="cactus-classical-serif-regular">Home</a>
+        <a onclick="openNav()" id="menu" class="menu_btn">&#9776;</a>
+        <a class="roboto-regular" href="index.html">Home</a>
+        <a class="roboto-regular" href="about.html">About</a>
+        <a class="roboto-regular" href="contact.html">Contact</a>
     </div>
 
     <div class="main-content">
@@ -58,7 +96,27 @@
             Etiam id varius nisl. Cras tempus ligula ultricies, tempus enim eu, vestibulum leo. 
             In euismod augue ipsum, pretium aliquet odio dapibus quis.
         </p>
+        <img src="triplet.jpg" alt="Triplet Image">
         <h2 class="h2" id="next-part">2. Next Part</h2>
+        <p class="paragraph"> Duis ut sodales tortor. Nulla semper id tellus vel interdum.
+            Praesent semper suscipit nisi, vitae semper velit sollicitudin quis. 
+            Sed eget metus iaculis, rhoncus mauris ac, auctor ipsum. Etiam quis elit orci. 
+            Donec id metus eu tortor cursus consequat. Class aptent taciti sociosqu ad litora torquent per conubia nostra,
+            per inceptos himenaeos. Phasellus pretium finibus massa nec faucibus. Ut ac risus orci.
+            In malesuada diam et auctor finibus. Quisque placerat, est ut aliquam congue, metus dolor auctor arcu,
+            id iaculis mauris metus vitae mi.
+        </p>
+        <p class="paragraph">Pellentesque augue arcu, aliquet ac ullamcorper vehicula, hendrerit nec mauris.
+            Mauris quis commodo nulla. Vivamus lorem velit, hendrerit sit amet pretium nec, dictum in risus.
+            Aliquam at tortor eget eros fringilla convallis ac ut magna.
+            Sed tortor orci, varius at elit sed, laoreet aliquet enim. 
+            Etiam vel tellus nec velit porttitor pellentesque. Aenean a enim auctor, efficitur massa eget, venenatis tortor.   
+            Duis consequat vestibulum mollis. Quisque lacinia nulla eu nibh dictum sodales. 
+            Nam ultricies volutpat elit, at ultricies enim dapibus in. In et hendrerit risus. 
+            Ut in consequat augue. Nam non orci diam. Vivamus vitae justo pellentesque ante auctor rutrum id a sem. 
+            Nulla convallis erat id ex finibus posuere. Aenean porta odio non gravida fringilla.
+        </p>
+        <h2 class="h2" id="another-part">3. Another Part</h2>
         <p class="paragraph"> Duis ut sodales tortor. Nulla semper id tellus vel interdum.
             Praesent semper suscipit nisi, vitae semper velit sollicitudin quis. 
             Sed eget metus iaculis, rhoncus mauris ac, auctor ipsum. Etiam quis elit orci. 
