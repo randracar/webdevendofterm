@@ -127,7 +127,6 @@ img {
 
 .topnav a:focus {
   outline: none;
-  font-size: 17px;
 }
 
 .topnav h1 {
@@ -166,28 +165,28 @@ img {
 
 /* The side navigation menu */
 .sidenav {
-  height: 100%; /* 100% Full-height */
-  width: 250px; /* 0 width - change this with JavaScript */
-  position: fixed; /* Stay in place */
-  z-index: 1; /* Stay on top */
-  top: 0; /* Stay at the top */
-  right: 0; /* Stay at the right side */
-  background-color: #8f8f8f; /* Black*/
-  overflow-x: hidden; /* Disable horizontal scroll */
-  padding-top: 60px; /*80px;
+  height: 100%;
+  width: 250px;
+  position: fixed;
+  z-index: 1;
+  top: 0;
+  right: 0;
+  background-color: #8f8f8f;
+  overflow-x: hidden;
+  padding-top: 60px;
+  transition: 0.5s;
+}
+
+/* The navigation menu links */
+.sidenav a {
+  padding: 8px 8px 8px 80px;
   text-decoration: none;
   font-size: 26px;
   color: #f8f8f8;
   display: block;
   transition: 0.3s;
   outline: none;
-  border: none
-  padding: 8px 8px 8px 32px;
-  text-decoration: none;
-  font-size: 26px;
-  color: #f8f8f8;
-  display: block;
-  transition: 0.3s;
+  border: none;
 }
 
 /* When you mouse over the navigation links, change their color */
@@ -213,7 +212,13 @@ img {
 
 /* On smaller screens, where height is less than 450px, change the style of the sidenav (less padding and a smaller font size) */
 @media screen and (max-height: 450px) {
- 
+  .sidenav {
+    padding-top: 15px;
+  }
+  .sidenav a {
+    font-size: 18px;
+  }
+}
 
 /* Mobile responsive layout */
 @media screen and (max-width: 768px) {
@@ -260,6 +265,4 @@ img {
   img {
     width: 100%;
   }
-} .sidenav {padding-top: 15px;}
-  .sidenav a {font-size: 18px;}
 }
