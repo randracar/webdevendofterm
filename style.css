@@ -1,4 +1,12 @@
 
+hr {
+  border: none;
+  border-top: 4px solid #5a5959;
+  width: 80%;
+  margin: 20px auto;
+  height: 1px;
+}
+
 html, body {
   margin: 0;
   padding: 0;
@@ -16,7 +24,7 @@ img {
 .image-modal {
   position: fixed;
   inset: 0;
-  background: #1b153e;
+  background: #063608;
   display: none;
   align-items: center;
   justify-content: center;
@@ -89,14 +97,35 @@ img {
 }
 
 
-.paragraph {
+.paragraph-container {
+  width: min(1100px, 90%);
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+
+.paragraph-container p {
+  width: 100%;
   font-family: Verdana, Geneva, sans-serif;
   font-weight: 200;
   font-style: normal;
   font-size: 18px;
-  display: block;
+  text-align: justify;
   margin: 0;
   padding: 0;
+}
+
+.paragraph-container h2 {
+  width: 100%;
+  text-align: left;
+  margin: 0;
+  padding: 20px 0 10px;
+}
+
+.paragraph-container img {
+  width: 100%;
+  margin: 20px 0;
 }
 
 .title {
@@ -117,7 +146,7 @@ img {
   justify-content: center;
   align-items: center;
   height: 100px;
-  background-color: #1b153e;
+  background-color: #063608;
 }
 
 .article-navigation-container {
@@ -125,7 +154,7 @@ img {
   justify-content: center;
   align-items: center;
   padding: 40px;
-  background-color: #20194a;
+  background-color: #18641a;
 }
 
 .h2 {
@@ -140,7 +169,7 @@ img {
 
 /* Add a black background color to the top navigation */
 .topnav {
-  background-color: #1b153e;
+  background-color: #063608;
   overflow: hidden;
   height: 80px;
   position: relative;
@@ -209,7 +238,7 @@ img {
   bottom: 12px;
   width: 100%;
   height: 2px;
-  background-color: #fc3528;
+  background-color: #FBE6C2;
   transform: scaleX(0);
   transform-origin: left center;
   transition: transform 0.3s ease-in-out;
@@ -237,7 +266,7 @@ img {
   z-index: 1;
   top: 0;
   right: 0;
-  background-color: #1b153e;
+  background-color: #063608;
   overflow-x: hidden;
   padding-top: 60px;
   transition: 0.5s;
