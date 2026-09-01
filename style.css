@@ -1,17 +1,17 @@
 
 hr {
   border: none;
-  border-top: 4px solid #5a5959;
+  border-top: 2px solid #76C457;
   width: 80%;
   margin: 20px auto;
-  height: 1px;
+  height: 2px;
 }
 
 html, body {
   margin: 0;
   padding: 0;
   width: 100%;
-  background-color: #1b153e;
+  background-color: #063608;
 }
 
 img {
@@ -98,34 +98,53 @@ img {
 
 
 .paragraph-container {
-  width: min(1100px, 90%);
+  width: min(700px, 90%);
   margin: 0 auto;
   display: flex;
-  flex-direction: column;
+  gap: 40px;
   align-items: center;
+}
+
+.svg-container {
+  flex-shrink: 0;
+  width: 3%;
+  min-width: 40px;
+}
+
+.text-container {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
 }
 
 .paragraph-container p {
   width: 100%;
-  font-family: Verdana, Geneva, sans-serif;
-  font-weight: 200;
+  font-family: "Roboto", sans-serif;
+  font-weight: 400;
   font-style: normal;
+  color: #050505;
   font-size: 18px;
   text-align: justify;
-  margin: 0;
   padding: 0;
 }
 
 .paragraph-container h2 {
+  font-family: Verdana, Geneva, sans-serif;
   width: 100%;
   text-align: left;
   margin: 0;
   padding: 20px 0 10px;
 }
 
-.paragraph-container img {
+.paragraph-container svg {
   width: 100%;
-  margin: 20px 0;
+  height: auto;
+}
+
+.paragraph-container img {
+  width: 60%;
+  margin: 20px auto;
+  display: block;
 }
 
 .title {
@@ -135,21 +154,71 @@ img {
   font-size: 42px;
   color: #f1f1f1; 
   margin: 0;
-  padding: 20px 0;
+  padding: 0;
   display:flex;
   justify-content: center;
 }
 
 .title-container{
-  padding: 80px;
+  padding: 80px 80px 40px;
   display: flex;
+  flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100px;
+  gap: 4px;
   background-color: #063608;
 }
 
-.article-navigation-container {
+.title-container h2 {
+  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.title-container > div {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  margin: 0;
+}
+
+.title-container h3 {
+  margin: 0;
+  padding: 0;
+  font-size: 16px;
+  font-family: Verdana, Geneva, Tahoma, sans-serif;
+  color: #f1f1f1;
+}
+
+.title-container > div svg {
+  width: 18px;
+  height: 18px;
+  display: block;
+}
+
+.bottom-bar {
+  padding: 40px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+  background-color: #063608;
+}
+
+.bottom-bar p {
+  font-family: Verdana, Geneva, sans-serif;
+  font-weight: 200;
+  font-style: normal;
+  font-size: 14px;
+  color: #f1f1f1; 
+  margin: 0;
+  padding: 20px 0;
+}
+
+.divisor-container {
   display: flex;
   justify-content: center;
   align-items: center;
@@ -234,24 +303,24 @@ img {
 .topnav a::after {
   content: "";
   position: absolute;
-  left: 0;
+  left: 50%;
   bottom: 12px;
   width: 100%;
   height: 2px;
   background-color: #FBE6C2;
-  transform: scaleX(0);
-  transform-origin: left center;
+  transform: translateX(-50%) scaleX(0);
+  transform-origin: center;
   transition: transform 0.3s ease-in-out;
 }
 
 .topnav a:hover::after {
-  transform: scaleX(1);
+  transform: translateX(-50%) scaleX(1);
 }
 
 /* Add a color to the active/current link */
 .topnav a.active {
-  background-color: #04AA6D;
-  color: white;
+  background-color: #FBE6C2;
+  color: #FBE6C2;
 }
 
 
@@ -279,8 +348,8 @@ img {
 /* The navigation menu links */
 .sidenav a {
   width: 100%;
-  padding: 12px 0;
-  text-align: center;
+  padding: 12px 0 12px 30px;
+  text-align: left;
   text-decoration: none;
   font-size: 26px;
   color: #f8f8f8;
@@ -293,16 +362,25 @@ img {
 
 /* When you mouse over the navigation links, change their color */
 .sidenav a:hover {
-  color: #f1f1f1;
+  color: #b14040;
 }
 
 /* Position and style the close button (top right corner) */
 .sidenav .closebtn {
   position: absolute;
-  top: 0;
-  right: 25px;
+  top: 15px;
+  right: 15px;
   font-size: 36px;
-  margin-left: 50px;
+  color: #f1f1f1;
+  cursor: pointer;
+  padding: 0 !important;
+  background: transparent !important;
+  border: none !important;
+  line-height: 1;
+  width: auto !important;
+  display: inline !important;
+  z-index: 10;
+  text-align: right !important;
 }
 
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
@@ -310,7 +388,7 @@ img {
   transition: margin-right .5s ease, width .5s ease;
   padding: 0;
   margin: 0;
-  background-color:#1b153e;
+  background-color:#063608;
   width: 100%;
   box-sizing: border-box;
 }
