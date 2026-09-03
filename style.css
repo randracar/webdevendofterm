@@ -159,7 +159,7 @@ img {
   justify-content: center;
 }
 
-.title-container{
+.title-container {
   padding: 80px 80px 40px;
   display: flex;
   flex-direction: column;
@@ -170,9 +170,10 @@ img {
 }
 
 .title-container h2 {
-  font-family:Verdana, Geneva, Tahoma, sans-serif;
+  font-family: "Cactus Classical Serif", serif;
   font-weight: 300;
   font-style: normal;
+  color: #f1f1f1;
   font-size: 18px;
   margin: 0;
   padding: 0;
@@ -185,18 +186,26 @@ img {
   margin: 0;
 }
 
-.title-container h3 {
-  margin: 0;
-  padding: 0;
-  font-size: 16px;
-  font-family: Verdana, Geneva, Tahoma, sans-serif;
-  color: #f1f1f1;
+.title-container > div svg {
+  width: 18px;
+  height: 18px;
+  filter: invert(89%) sepia(23%) saturate(457%) hue-rotate(330deg) brightness(103%) contrast(97%);
 }
 
 .title-container > div svg {
   width: 18px;
   height: 18px;
   display: block;
+}
+
+.title-container > div h3 {
+  font-family: "Cactus Classical Serif", serif;
+  font-weight: 300;
+  font-style: normal;
+  font-size: 16px;
+  margin: 0;
+  padding: 0;
+  color: #f1f1f1; 
 }
 
 .bottom-bar {
@@ -226,6 +235,10 @@ img {
   background-color: #18641a;
 }
 
+.divisor-icons {
+  display: none;
+}
+
 .h2 {
   font-family: Verdana, Geneva, sans-serif;
   font-weight: 300;
@@ -240,7 +253,7 @@ img {
 .topnav {
   background-color: #063608;
   overflow: hidden;
-  height: 80px;
+  height: 90px;
   position: relative;
   display: flex;
   justify-content: center;
@@ -266,7 +279,7 @@ img {
   color: #f2f2f2;
   text-align: center;
   font-size: 14px;
-  padding: 20px 10px;
+  padding: 30px 10px;
   text-decoration: none;
   outline: none;
   border: none;
@@ -383,6 +396,42 @@ img {
   text-align: right !important;
 }
 
+.article-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: flex-start;
+  gap: 8px;
+  height: 480px;
+  box-sizing: border-box;
+  padding: 40px 160px;
+  text-align: justify;
+  background-color: #063608;
+  background-image: url('images/stock.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.article-container h3 {
+  font-family: "Cactus Classical Serif", serif;
+  font-weight: 300;
+  font-style: normal;
+  color: #f1f1f1; 
+  font-size: 18px;
+  margin: 0;
+  padding: 0;
+}
+
+.article-container h1 {
+  font-family: "PT Serif Caption", serif;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 42px;
+  color: #f1f1f1; 
+  margin: 0;
+  padding: 0;
+}
+
 /* Style page content - use this if you want to push the page content to the right when you open the side navigation */
 #main {
   transition: margin-right .5s ease, width .5s ease;
@@ -393,10 +442,18 @@ img {
   box-sizing: border-box;
 }
 
-.main-content {
+.main-content-article {
   padding: 0;
   margin: 0;
   background-color:#f5f5f7;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.main-content-index {
+  padding: 0;
+  margin: 0;
+  background-color:#063608;
   width: 100%;
   box-sizing: border-box;
 }
@@ -407,6 +464,9 @@ img {
   .sidenav a {
     font-size: 18px;
   }
+
+  /*sidenav is omitted on small screens, so we don't need to worry about the main content*/
+  
 }
 
 @media screen and (max-width: 768px) {
@@ -420,22 +480,41 @@ img {
   }
 
   .topnav .menu_btn {
-    display: block !important;
-    padding: 15px 15px;
+    display: none !important;
   }
 
   #main {
     padding: 0px;
-    margin-right: 0;
+    margin-right: 0 !important;
+    width: 100% !important;
   }
 
   .sidenav {
-    width: 0;
+    display: none !important;
   }
 
-  .sidenav a {
-    padding: 8px 8px 8px 32px;
-    font-size: 18px;
+  .svg-container {
+    display: none;
+  }
+
+  .divisor-icons {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    flex-wrap: wrap;
+    gap: 20px;
+    width: 100%;
+  }
+
+  .divisor-icons svg {
+    width: 32px;
+    height: 32px;
+    flex-shrink: 0;
+  }
+
+  .divisor-icons svg path {
+    fill: #ffffff;
   }
 
   .paragraph {

@@ -1,0 +1,15 @@
+ 	{{#if loggedIn}}
+You are logged in as {{username}} 
+<button>LOGOUT</button>
+{{/if}}
+
+<h1>{{title}}</h1>
+<p>{{content}}</p>
+
+<ol>
+    {{#each items}}
+    <li>
+        {{title}} - {{description}}
+    </li>
+    {{/each}}
+</ol>
