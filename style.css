@@ -576,7 +576,7 @@ img {
 .search-container input[type="text"] {
   width: 100%;
   box-sizing: border-box;
-  padding: 16px 44px 16px 14px;
+  padding: 24px 44px 24px 14px;
   border: none;
   font-size: 17px;
 }
@@ -589,7 +589,7 @@ img {
   display: flex;
   align-items: center;
   gap: 6px;
-  background-color: #063608;
+  background-color: #18641a;
   color: #f1f1f1;
   border: none;
   padding: 14px 20px;
@@ -604,7 +604,7 @@ img {
 }
 
 .search-container button:hover {
-  background-color: #18641a;
+  background-color: #429c45;
   color: #f1f1f1;
 }
 

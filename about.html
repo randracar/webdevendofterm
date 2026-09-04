@@ -3,12 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>The story of the Internet since 2006</title>
+    <title>About — The history of the Internet in Brazil since 2006</title>
     <link rel="stylesheet" href="style.css">
 
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=M+PLUS+Rounded+1c&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Cactus+Classical+Serif&family=Fleur+De+Leah&family=M+PLUS+Rounded+1c&family=PT+Serif+Caption:ital@0;1&family=Roboto:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
 
     <script>
@@ -27,15 +27,7 @@
         }
 
         document.addEventListener("DOMContentLoaded", function() {
-            const modal = document.getElementById("imageModal");
             const closeButton = document.getElementById("closeModal");
-            const images = document.querySelectorAll("img");
-
-            images.forEach((image) => {
-                image.addEventListener("click", function() {
-                    openImageModal(image);
-                });
-            });
 
             closeButton.addEventListener("click", closeImageModal);
         });
@@ -48,9 +40,6 @@
         <img id="modalImage" src="" alt="Expanded view">
     </div>
 
-<!-- Use any element to open the sidenav -->
-
-<!-- Add all page content inside this div if you want the side nav to push page content to the right (not used if you only want the sidenav to sit on top of the page -->
     <!-- top bar -->
     <div class="topnav">
         <a class="roboto-regular" href="index.html">Home</a>
@@ -59,11 +48,95 @@
         <a class="roboto-regular" href="contact.html">Contact</a>
     </div>
 
-    <div class="main-content">
-        About the author: <br>
-        <img src="images/author.jpg" alt="Author's photo" class="author-photo">
-        
+    <div class="main-content-article" id="about-content">
     </div>
 
-    
+    <script type="text/template" id="about-template"><div class="title-container">
+    <h1 class="title">{{title}}</h1>
+    <h2>{{author}}</h2>
+    <div>
+        <svg version="1.1" id="Icons" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" viewBox="0 0 32 32" xml:space="preserve">
+            <style type="text/css">
+                .st0{fill:none;stroke:#000000;stroke-width:2;stroke-linecap:round;stroke-linejoin:round;stroke-miterlimit:10;}
+            </style>
+            <path class="st0" d="M16,28V7c0-1.7-1.3-3-3-3H2v21h11C14.7,25,16,26.3,16,28L16,28"/>
+            <path class="st0" d="M16,28V7c0-1.7,1.3-3,3-3h11v21H19C17.3,25,16,26.3,16,28L16,28"/>
+            <polyline class="st0" points="2,25 2,29 16,29 "/>
+            <polyline class="st0" points="30,25 30,29 16,29 "/>
+        </svg>
+        <h3>{{meta}}</h3>
+    </div>
+</div>
+<div class="divisor-container"></div>
+{{#each sections}}
+{{#if separator}}<hr>{{/if}}
+<div class="paragraph-container">
+    <div class="text-container">
+        <h2 class="h2" id="{{id}}">{{heading}}</h2>
+        {{#each paragraphs}}
+        <p class="paragraph">{{this}}</p>
+        {{/each}}
+        {{#if image}}
+        <img src="{{image}}" alt="{{imageAlt}}">
+        {{/if}}
+    </div>
+</div>
+{{/each}}
+<div class="divisor-container"></div>
+<div class="bottom-bar">
+    <p class="roboto-regular">{{footer}}</p>
+</div>
+</script>
+
+    <script src="templateengine.js"></script>
+    <script>
+        const aboutData = {
+            title: 'About',
+            author: 'Rafael de Andrade Carneiro',
+            meta: 'The author & the project',
+            footer: '© 2024 Your Name. All rights reserved.',
+            sections: [
+                {
+                    id: 'about-the-author',
+                    heading: 'About the author',
+                    paragraphs: [
+                        '&emsp;My name is Rafael de Andrade Carneiro, and I am a web development student. This site is a project I built by hand, from the first line of HTML to the last rule of CSS, as a way of learning how the pieces of the web actually fit together rather than reading about them from a distance.',
+                        '&emsp;I grew up alongside the version of the Internet this site is about — the one that took shape in Brazil from the mid-2000s onward. Writing about it turned out to be a good excuse to look closely at something I had always taken for granted.'
+                    ],
+                    image: 'images/stock.jpg',
+                    imageAlt: 'The author'
+                },
+                {
+                    id: 'about-this-project',
+                    heading: 'About this project',
+                    separator: true,
+                    paragraphs: [
+                        '&emsp;This website was written for a web development course, and every part of it is hand-made: there is no framework, no build step, and no external library doing the heavy lifting. The layout is plain CSS — flexbox for structure, media queries for the mobile version — and the interactions, like the expanding images and the sliding side navigation, are a few dozen lines of JavaScript.',
+                        '&emsp;The text you are reading is not written into this page directly. It is stored as plain data and rendered by a small template engine written from scratch for this project, which supports variables, conditionals and loops. The article page works the same way, which means the writing and the layout can be changed independently of each other.'
+                    ]
+                },
+                {
+                    id: 'why-the-internet-in-brazil',
+                    heading: 'Why the Internet in Brazil',
+                    separator: true,
+                    paragraphs: [
+                        '&emsp;The story of the Internet is usually told from somewhere else — Silicon Valley, mostly, with the same handful of companies at the centre of it. That version leaves out how differently the web arrived, spread and was used in the rest of the world.',
+                        '&emsp;This site starts in 2006 because it is a useful hinge: broadband was beginning to reach ordinary households, social networks were about to reshape how people spent their time online, and the mobile Internet was still a few years away from changing everything again. What follows is an attempt to trace what happened next.'
+                    ]
+                }
+            ]
+        };
+
+        const tEngine = new SimpleTemplateEngine();
+
+        tEngine.loadTemplateFromElement('#about-template').then(() => {
+            tEngine.renderTemplate('#about-content', aboutData);
+
+            document.querySelectorAll('#about-content img').forEach((image) => {
+                image.addEventListener('click', function() {
+                    openImageModal(image);
+                });
+            });
+        });
+    </script>
 </body>
