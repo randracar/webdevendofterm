@@ -49,9 +49,6 @@ class SimpleTemplateEngine {
         });
     }
 
-    // Extracts {{#tag key}}...{{/tag}} blocks, tracking nesting depth so a
-    // block containing another block of the same tag (e.g. {{#each}} inside
-    // {{#each}}) is matched against its own closing tag, not the inner one.
     _renderBlocks(template, tag, handler) {
         const openPrefix = `{{#${tag} `;
         const closeTag = `{{/${tag}}}`;

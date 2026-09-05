@@ -1,0 +1,244 @@
+/* the wrapper owns the panel height and centres the pair of columns;
+   the container below hugs its content so the columns can match each
+   other's height via stretch */
+.main-content {
+    display: flex;
+    align-items: center;
+    min-height: calc(100vh - 90px);
+    background-color: #063608;
+}
+
+.contact-container {
+    display: flex;
+    align-items: stretch;
+    gap: 80px;
+    width: 100%;
+}
+
+.contact-container .heading {
+    margin-left: 80px;
+    margin-top: 0;
+    margin-bottom: 0px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+.contact-container .heading h1 {
+    font-family: "PT Serif Caption", serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #f1f1f1;
+    font-size: 64px;
+
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container .heading p {
+    font-family: "Cactus Classical Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    color: #f1f1f1;
+    font-size: 28px;
+
+    margin: 0;
+    padding: 0;
+}
+
+.contact-container .contact-form {
+    margin-left: auto;
+    margin-right: 120px;
+    margin-top: 0;
+    margin-bottom: 0px;
+
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    justify-content: flex-start;
+    align-items: flex-start;
+}
+
+/* CONTACT FORM */
+/* --------------------------------- */
+
+/* SOCIAL LINKS */
+/* --------------------------------- */
+
+/* .heading is a flex column stretched to the form's height, so auto eats
+   all the slack above and drops this to the bottom, level with the form */
+.contact-container .socials {
+    margin-top: auto;
+}
+
+/* override .contact-container .heading p (28px Cactus, meant for the
+   intro line) - this caption wants to be much smaller */
+.contact-container .socials p {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #f1f1f1;
+    margin: 0 0 12px 0;
+}
+
+.contact-container .social-links {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+}
+
+.contact-container .social-links a {
+    display: inline-flex;
+    line-height: 0;
+}
+
+.contact-container .social-links svg {
+    width: 28px;
+    height: 28px;
+}
+
+/* the source SVGs carry fill="#000000"; recolour them for the dark panel */
+.contact-container .social-links svg path {
+    fill: #f1f1f1;
+    transition: fill 0.25s ease;
+}
+
+.contact-container .social-links a:hover svg path {
+    fill: #429c45;
+}
+
+/* Formspree spam honeypot - must be hidden via CSS rather than
+   type="hidden", which bots ignore */
+.contact-container .honeypot {
+    display: none;
+}
+
+.contact-container .contact-form form {
+    display: flex;
+    flex-direction: column;
+    gap: 20px;
+    width: 380px;
+    max-width: 100%;
+}
+
+/* wrapper per control so the site's scaleX underline can live on the
+   field (inputs are replaced elements and can't carry their own ::after) */
+.contact-container .field {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    gap: 6px;
+}
+
+.contact-container .field label {
+    font-family: "Cactus Classical Serif", serif;
+    font-weight: 300;
+    font-style: normal;
+    font-size: 18px;
+    color: #f1f1f1;
+}
+
+.contact-container .field input,
+.contact-container .field textarea {
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #050505;
+    background-color: #f1f1f1;
+    border: none;
+    outline: none;
+    box-sizing: border-box;
+    width: 100%;
+    padding: 14px;
+}
+
+.contact-container .field textarea {
+    resize: vertical;
+    min-height: 120px;
+}
+
+/* same underline animation as .topnav a::after and the homepage hero */
+.contact-container .field::after {
+    content: "";
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    width: 100%;
+    height: 3px;
+    background-color: #429c45;
+    transform: scaleX(0);
+    transform-origin: left;
+    transition: transform 0.3s ease-in-out;
+}
+
+.contact-container .field:focus-within::after {
+    transform: scaleX(1);
+}
+
+.contact-container .contact-form button {
+    align-self: flex-start;
+    display: flex;
+    align-items: center;
+    gap: 6px;
+    font-family: "Roboto", sans-serif;
+    font-size: 16px;
+    color: #f1f1f1;
+    background-color: #18641a;
+    border: none;
+    padding: 14px 20px;
+    cursor: pointer;
+    transition: background-color 0.25s ease;
+}
+
+.contact-container .contact-form button:hover {
+    background-color: #429c45;
+}
+
+.contact-container .contact-form button .send-icon {
+    width: 18px;
+    height: 18px;
+    flex-shrink: 0;
+}
+
+@media screen and (max-width: 768px) {
+    .main-content {
+        display: block;
+    }
+
+    .contact-container {
+        flex-direction: column;
+        align-items: flex-start;
+        gap: 0;
+    }
+
+    .contact-container .heading {
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 40px;
+    }
+
+    .contact-container .heading h1 {
+        font-size: 36px;
+    }
+
+    .contact-container .heading p {
+        font-size: 18px;
+    }
+
+    .contact-container .socials {
+        margin-top: 32px;
+    }
+
+    .contact-container .contact-form {
+        margin-left: 40px;
+        margin-right: 40px;
+        margin-top: 32px;
+        margin-bottom: 40px;
+        align-self: stretch;
+    }
+
+    .contact-container .contact-form form {
+        width: 100%;
+    }
+}
